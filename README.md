@@ -7,6 +7,8 @@ The site as a product will either be free with ads that for the prototype will b
 The access code would be a one-time purchase but is needed whenever the site is accessed.
 Time spent on the project will be tracked in an Excel sheet that is added and updated to the repo when it is being checked as it is more fluid.
 The repo will show the changes that the project undergoes during development.
+Will show an explanation for the answer
+Show the percentage correct on the current visit (reset on refresh)
 
 Feedback and Guidance
 Lots of sample content needed
