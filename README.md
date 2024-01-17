@@ -19,6 +19,7 @@ Show the percentage correct on the current visit (reset on refresh)
 
 Sample questions are currently stored in Google Docs with a reference to them inside this repo as a pdf file
 
+
 Todo
 
 Gather more sample questions
@@ -26,5 +27,6 @@ Gather more sample questions
 Figure out formating for sample question database
 
 Get a initial build of the website created
+
 
 Feedback and Guidance
