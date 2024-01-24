@@ -17,16 +17,14 @@ Will show an explanation for the answer
 
 Show the percentage correct on the current visit (reset on refresh)
 
-Sample questions are currently stored in Google Docs with a reference to them inside this repo as a pdf file
+Sample questions are  stored in a csv file in repo as well as Google Sheets.
+
+Pictures needed for questions are stored in public of react project
 
 
 Todo
 
-Gather more sample questions
-
-Figure out formating for sample question database
-
-Get a initial build of the website created
+Get an initial build of the website created using ChatGPT
 
 
 Feedback and Guidance
