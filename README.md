@@ -13,20 +13,21 @@ The access code would be a one-time purchase but is needed whenever the site is 
 
 The repo will show the changes that the project undergoes during development.
 
-Will show an explanation for the answer
+Shows an explanation for the answer
 
 Show the percentage correct on the current visit (reset on refresh)
 
-Sample questions are  stored in a csv file in repo as well as Google Sheets.
+Sample questions are  stored in a CSV file in the repo as well as Google Sheets which has now been converted to JSON and is stored in a separate file
 
-Pictures needed for questions are stored in public of react project
+Pictures needed for questions are stored in the public folder of React project
 
 
 Todo
 
-Get an initial build of the website created using ChatGPT
-
-Get a test question in the site
-
+- Figure out how to add pictures to needed questions
+- Decide on checkboxes vs radio button
+- Or have checkboxes only on the multiple-answer questions
+- Have the selected answer be wiped after clicking the next question button
+- Check if the answer is correct after clicking the explanation button
 
 Feedback and Guidance
