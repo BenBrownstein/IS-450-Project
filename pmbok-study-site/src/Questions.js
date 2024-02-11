@@ -6,7 +6,7 @@ export const data = [
     "C": "Since this is only a probability it does not need an immediate action. Just try to gather more information as the project goes ahead and decide later on.",
     "D": "As a seasoned construction project manager, contact the regulatory body to find out some workarounds for your project.",
     "Correct": "A",
-    "Explanation": "PMI’s Code of Ethics requires all project managers to comply with all laws and regulations. Failure to immediately and actively disclose that a regulatory requirement has not been addressed puts the company and the project manager in the position of breaking the law."
+    "Explanation": "PMI’s Code of Ethics requires all project managers to comply with all laws and regulations. Failure to immediately and actively disclose that a regulatory requirement has not been addressed puts the company and the project manager in the position of breaking the law.",
   },
   {
     "Question": "Your sponsor will be leaving your project soon due to other obligations. She informs you that her role will be filled with two new people. She assures you that this should not affect the communication complexity of the team since you are only going from eleven to twelve members. Is your sponsor correct?",
@@ -276,7 +276,8 @@ export const data = [
     "C": "Task A",
     "D": "Tasks D & E & F",
     "Correct": "A",
-    "Explanation": "When crashing a project you will always crash those tasks that have the smallest crash cost. While all of these answers will give you a 4 week reduction in duration, crashing tasks C & E is the cheapest option: Task A = 6,500 Tasks C & E = 2,000 + 3,500 = 5,500 Tasks B & D = 2,500 + 3,500 = 6,000 Tasks D & E & F = 3,500 + 3,500 + 4,000 = 11,000"
+    "Explanation": "When crashing a project you will always crash those tasks that have the smallest crash cost. While all of these answers will give you a 4 week reduction in duration, crashing tasks C & E is the cheapest option: Task A = 6,500 Tasks C & E = 2,000 + 3,500 = 5,500 Tasks B & D = 2,500 + 3,500 = 6,000 Tasks D & E & F = 3,500 + 3,500 + 4,000 = 11,000",
+    "img": "/31Picture.png"
   },
   {
     "Question": "You are managing a project and one of your close friends is also a manager at the client organization. During the project execution, your friend asks for changes to be made in the project scope, and with the reasoning that the changes are critical to the success of the project, he asks you to handle them on an informal basis. He argues that if you want to follow the normal change procedures you will lose considerable time. What should you do in this situation?",
@@ -519,7 +520,8 @@ export const data = [
     "C": "Risk analysis",
     "D": "Leveling the resources",
     "Correct": "B",
-    "Explanation": "In this situation, leveling the resources will generally increase the duration. Since the network diagram cannot be changed, the fast tracking option is also not feasible. So crashing remains as the best option in this situation to decrease the duration."
+    "Explanation": "In this situation, leveling the resources will generally increase the duration. Since the network diagram cannot be changed, the fast tracking option is also not feasible. So crashing remains as the best option in this situation to decrease the duration.",
+    "img": "/58Picture.png"
   },
   {
     "Question": "You have just been hired as the project manager in a large company and given the approved project charter. You know that your company always undertakes very challenging projects and your project is not an exception. What should be your first course of action?",
@@ -843,7 +845,8 @@ export const data = [
     "C": "It might affect activity I, so reject the proposal",
     "D": "This does not have any effect on the critical path, so reject the proposal",
     "Correct": "D",
-    "Explanation": "According to the list of activities, activity H has float and is not critical. Therefore, changing its sequence to perform it sooner will not change the project finish date. The best way is to complete the critical activities earlier."
+    "Explanation": "According to the list of activities, activity H has float and is not critical. Therefore, changing its sequence to perform it sooner will not change the project finish date. The best way is to complete the critical activities earlier.",
+    "img": "/94Picture.png"
   },
   {
     "Question": "You are managing an IT project for an external client. The project is ahead of schedule and your next activities are testing and hand over. Which one of the followings will you be more concerned about in this situation?",
@@ -861,7 +864,7 @@ export const data = [
     "C": "Create a change request for this feature",
     "D": "Update the work breakdown structure to include the new feature.",
     "Correct": "D",
-    "Explanation": "Agile projects, such as Scrum, do not utilize a formal change control procedure since doing so would slow the team down. The product owner instead is authorized to approve changes. They would not add this feature to the sprint backlog, however, since the team is already committed to the scope for the current sprint. Therefore, adding the feature to the product backlog and reprioritizing the backlog is the best answer."
+    "Explanation": "Agile projects, such as Scrum, do not utilize a formal change control procedure since doing so would slow the team down. The product owner instead is authorized to approve changes. They would not add this feature to the sprint backlog, however, since the team is already committed to the scope for the current sprint. Therefore, adding the feature to the product backlog and reprioritizing the backlog is the best answer.",
   },
   {
     "Question": "A project manager is trying to plan for a contingency reserve as part of the cost estimates for the project. Which of these would be an incorrect way to plan for contingency reserves?",
@@ -897,6 +900,6 @@ export const data = [
     "C": "Lump sum contract",
     "D": "Cost-Plus-Fee contract",
     "Correct": "C",
-    "Explanation": "A fixed price contract is synonymous with a lump sum contract. This type of contract involves a fixed total price, or a lump sum, for a well-defined product."
+    "Explanation": "A fixed price contract is synonymous with a lump sum contract. This type of contract involves a fixed total price, or a lump sum, for a well-defined product.",
   }
 ]

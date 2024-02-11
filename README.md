@@ -24,10 +24,8 @@ Pictures needed for questions are stored in the public folder of React project
 
 Todo
 
-- Figure out how to add pictures to needed questions
-- Decide on checkboxes vs radio button
-- Or have checkboxes only on the multiple-answer questions
-- Have the selected answer be wiped after clicking the next question button
-- Check if the answer is correct after clicking the explanation button
+- Figure out how to switch to checkboxes for multi-answer questions
+- Lock buttons after pressing either check answer or explanation
+- Decide on how to score either remembering questions that are already answered or removing the previous question button
 
 Feedback and Guidance
