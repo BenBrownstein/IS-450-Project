@@ -51,7 +51,7 @@ export const data = [
     "C": "Expose and eliminate communication bottlenecks.",
     "D": "Creation of a change control procedure so that only needed changes are addressed and implemented.",
     "Correct": "B, C",
-    "Explanation": "The key to this question is that it is a change-driven (i.e., Agile) project and the team has experience with this type. A servant leader style is most effective for this environment. Empowering a team to self-organize and work collaboratively and eliminating bottlenecks are characteristics of such a leadership style. A detailed schedule with milestones will not benefit the team’s performance, particularly if the work will be accomplished via a product backlog. Similarly, a change control procedure is generally not needed for change-driven projects since change is built into the system between iterations or sprints."
+    "Explanation": "The key to this question is that it is a change-driven (i.e., Agile) project and the team has experience with this type. A servant leader style is most effective for this environment. Empowering a team to self-organize and work collaboratively and eliminating bottlenecks are characteristics of such a leadership style. A detailed schedule with milestones will not benefit the team’s performance, particularly if the work will be accomplished via a product backlog. Similarly, a change control procedure is generally not needed for change-driven projects since change is built into the system between iterations or sprints.",
   },
   {
     "Question": "To formally authorize the project, which of the following documents is necessary?",

@@ -24,8 +24,6 @@ Pictures needed for questions are stored in the public folder of React project
 
 Todo
 
-- Figure out how to switch to checkboxes for multi-answer questions
-- Lock buttons after pressing either check answer or explanation
-- Decide on how to score either remembering questions that are already answered or removing the previous question button
+- Fix Score for checkboxes
 
 Feedback and Guidance
