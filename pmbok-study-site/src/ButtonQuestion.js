@@ -23,23 +23,37 @@ export default function ErrorRadios(props) {
   const [buttonState, setButtonState] = useState(false)
   const [end, setEnd] = useState(false)
 
-  const handleRadioChange = (event) => {
+  const handleChange = (event) => {
     setValue(event.target.value);
     setHelperText(' ');
     setError(false);
-  };
-
-  const handleCheckChange = (event) => {
-    setValue(event.target.value);
-    setHelperText(' ');
-    setError(false);
+    if (answer[Number(event.target.value)] === 0) {
+      answer[event.target.value] = 1
+    } else {
+      answer[event.target.value] = 0
+    }
   };
 
   const handleClick = () => {
     setDisplayText(props.question.Explanation);
     setButtonState(true)
-    console.log(value)
     if (value === props.question.Correct) {
+      setHelperText('Correct');
+      setError(false);
+      setScore(score + 1);
+    } else {
+      setHelperText('Incorrect');
+      setError(true);
+    }
+    if (props.currentQuestion === data.length - 1) {
+      setEnd(true)
+    }
+  };
+
+  const handleCheckClick = () => {
+    setDisplayText(props.question.Explanation);
+    setButtonState(true)
+    if (answer.toString() === props.question.Correct.toString()) {
       setHelperText('Correct');
       setError(false);
       setScore(score + 1);
@@ -57,22 +71,22 @@ export default function ErrorRadios(props) {
       <form>
         <FormControl sx={{ m: 3 }} error={error} variant="standard">
           <FormLabel id="question">{props.question.Question}</FormLabel>
-          <img src={props.question.img} alt="" />
-          <h2>{score}</h2>
+          <img src={props.question.img} height={props.question.height} width={props.question.width} />
+          <h2>{score}/{data.length}</h2>
           <FormGroup
             aria-labelledby="question"
             name="quiz"
-            value={value}
-            onChange={handleCheckChange}
+            value={answer}
+            onChange={handleChange}
           >
 
-            <FormControlLabel control={<Checkbox value="A" />} label={props.question.A} />
-            <FormControlLabel control={<Checkbox value="B" />} label={props.question.B} />
-            <FormControlLabel control={<Checkbox value="C" />} label={props.question.C} />
-            <FormControlLabel control={<Checkbox value="D" />} label={props.question.D} />
+            <FormControlLabel disabled={buttonState} control={<Checkbox value="0" />} label={props.question.A} />
+            <FormControlLabel disabled={buttonState} control={<Checkbox value="1" />} label={props.question.B} />
+            <FormControlLabel disabled={buttonState} control={<Checkbox value="2" />} label={props.question.C} />
+            <FormControlLabel disabled={buttonState} control={<Checkbox value="3" />} label={props.question.D} />
           </FormGroup>
           <FormHelperText>{helperText}</FormHelperText>
-          <Button sx={{ mt: 1, mr: 1 }} onClick={handleClick} disabled={buttonState} type="submit" variant="outlined">
+          <Button sx={{ mt: 1, mr: 1 }} onClick={handleCheckClick} disabled={buttonState} type="submit" variant="outlined">
             Check Answer
           </Button>
         </FormControl>
@@ -89,20 +103,31 @@ export default function ErrorRadios(props) {
           }
           setButtonState(false)
           setDisplayText('');
+          setAnswer([0, 0, 0, 0])
+          setHelperText(' ');
+          setError(false);
           setValue('')
-        }} variant="outlined">Prev Question</Button>
+        }} variant="outlined">Prev Question (Dev Tool)</Button>
 
         <Button onClick={() => {
           if (props.currentQuestion === data.length - 1) {
-            props.setCurrentQuestion(0)
           }
           else {
             props.setCurrentQuestion(props.currentQuestion + 1);
+            setButtonState(false)
+            setDisplayText('');
+            setAnswer([0, 0, 0, 0])
+            setHelperText(' ');
+            setError(false);
+            setValue('')
           }
-          setButtonState(false)
-          setDisplayText('');
-          setValue('')
         }} variant="outlined">Next Question</Button>
+
+        <EndScreen
+          on={end}
+          score={score}
+          total={data.length}
+        />
       </form>
     );
   } else {
@@ -110,13 +135,13 @@ export default function ErrorRadios(props) {
       <form>
         <FormControl sx={{ m: 3 }} error={error} variant="standard">
           <FormLabel id="question">{props.question.Question}</FormLabel>
-          <img src={props.question.img} alt="" />
+          <img src={props.question.img} height={props.question.height} width={props.question.width} />
           <h2>{score}/{data.length}</h2>
           <RadioGroup
             aria-labelledby="question"
             name="quiz"
             value={value}
-            onChange={handleRadioChange}
+            onChange={handleChange}
           >
             <FormControlLabel value="A" disabled={buttonState} control={<Radio />} label={props.question.A} />
             <FormControlLabel value="B" disabled={buttonState} control={<Radio />} label={props.question.B} />
@@ -143,6 +168,7 @@ export default function ErrorRadios(props) {
           setValue('')
           setHelperText(' ');
           setError(false);
+          setAnswer([0, 0, 0, 0])
         }} variant="outlined">Prev Question (Dev Tool)</Button>
 
         <Button onClick={() => {
@@ -155,9 +181,11 @@ export default function ErrorRadios(props) {
             setValue('')
             setHelperText(' ');
             setError(false);
+            setAnswer([0, 0, 0, 0])
           }
 
         }} variant="outlined">Next Question</Button>
+
         <EndScreen
           on={end}
           score={score}
@@ -171,7 +199,7 @@ export default function ErrorRadios(props) {
 
 function EndScreen(props) {
   const on = props.on
-  if (on == true) {
+  if (on === true) {
     return (
       <>
         <h1>You have answered all of the questions</h1>
@@ -184,5 +212,3 @@ function EndScreen(props) {
     );
   }
 }
-
-

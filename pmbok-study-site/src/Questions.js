@@ -50,8 +50,9 @@ export const data = [
     "B": "Allow the team to collaboratively develop a plan to execute the project.",
     "C": "Expose and eliminate communication bottlenecks.",
     "D": "Creation of a change control procedure so that only needed changes are addressed and implemented.",
-    "Correct": "B, C",
+    "Correct": [0, 1, 1, 0],
     "Explanation": "The key to this question is that it is a change-driven (i.e., Agile) project and the team has experience with this type. A servant leader style is most effective for this environment. Empowering a team to self-organize and work collaboratively and eliminating bottlenecks are characteristics of such a leadership style. A detailed schedule with milestones will not benefit the team’s performance, particularly if the work will be accomplished via a product backlog. Similarly, a change control procedure is generally not needed for change-driven projects since change is built into the system between iterations or sprints.",
+    "Checkbox": true
   },
   {
     "Question": "To formally authorize the project, which of the following documents is necessary?",
@@ -203,8 +204,10 @@ export const data = [
     "B": "Creating the staffing management plan.",
     "C": "Planning communication protocols for virtual team members.",
     "D": "Sending team members to the training needed for the project.",
-    "Correct": "A, C",
-    "Explanation": "Part of acquiring resources involves verifying if the costs of the selected team members will fit within the project budget. If virtual team members are an option, then special communication protocols will need to be put in place to minimize misunderstanding and conflict. Creating the staffing management plan would take place during the plan resource management process, and sending team members to training would occur during the develop team process."
+    "Correct": [1, 0, 1, 0],
+    "Explanation": "Part of acquiring resources involves verifying if the costs of the selected team members will fit within the project budget. If virtual team members are an option, then special communication protocols will need to be put in place to minimize misunderstanding and conflict. Creating the staffing management plan would take place during the plan resource management process, and sending team members to training would occur during the develop team process.",
+    "Checkbox": true
+
   },
   {
     "Question": "Your website development project is newly underway. The team appears to be in the “storming” stage, with several members insisting that the process occurs in a certain way and others unwilling to participate after their views were overruled. You recognize that cooperation and collaboration are imperative for the team to achieve the sponsor’s goal of a working prototype within the next few weeks. What is the most helpful action for you to take?",
@@ -277,7 +280,9 @@ export const data = [
     "D": "Tasks D & E & F",
     "Correct": "A",
     "Explanation": "When crashing a project you will always crash those tasks that have the smallest crash cost. While all of these answers will give you a 4 week reduction in duration, crashing tasks C & E is the cheapest option: Task A = 6,500 Tasks C & E = 2,000 + 3,500 = 5,500 Tasks B & D = 2,500 + 3,500 = 6,000 Tasks D & E & F = 3,500 + 3,500 + 4,000 = 11,000",
-    "img": "/31Picture.png"
+    "img": "/31Picture.png",
+    "height": "40%",
+    "width": "40%"
   },
   {
     "Question": "You are managing a project and one of your close friends is also a manager at the client organization. During the project execution, your friend asks for changes to be made in the project scope, and with the reasoning that the changes are critical to the success of the project, he asks you to handle them on an informal basis. He argues that if you want to follow the normal change procedures you will lose considerable time. What should you do in this situation?",
@@ -397,11 +402,11 @@ export const data = [
     "Explanation": "Checking back with the team member to verify the effectiveness of the training is the most appropriate next step. It is the job of the project manager to not only recommend training opportunities for their team but to ensure that the training was effective. It may be a good idea to tell their supervisor that they will be taking the training. However, it is not clear that mentoring is needed until the project manager has had an opportunity to assess how well the training went. Additionally, it is the responsibility of the project manager, rather than the functional manager, to see to it that a mentor is assigned since the skills in question are needed for his project. Reassigning tasks and asking for a client extension would be premature and might be unnecessary. Although the pace has slowed, there is no indication from the question that the project is behind schedule."
   },
   {
-    "Question": "Projects, by definition, represent change since each one is unique. Some projects represent a greater change to the organization than others, such as when changing a project methodology from a predictive to an adaptive one if it is new to the organization. Fill in the blank regarding the most important cultural norm necessary to create organizational change.",
+    "Question": "Projects, by definition, represent change since each one is unique. Some projects represent a greater change to the organization than others, such as when changing a project methodology from a predictive to an adaptive one if it is new to the organization. What is the most important cultural norm necessary to create organizational change.",
     "A": "Safe",
-    "B": "Need other options",
-    "C": "Need other options",
-    "D": "Need other options",
+    "B": "Security",
+    "C": "Teamwork",
+    "D": "Communication",
     "Correct": "A",
     "Explanation": "The answer is safe. According to the APG, the most important cultural norm needed is one that enables a safe work environment."
   },
@@ -521,7 +526,9 @@ export const data = [
     "D": "Leveling the resources",
     "Correct": "B",
     "Explanation": "In this situation, leveling the resources will generally increase the duration. Since the network diagram cannot be changed, the fast tracking option is also not feasible. So crashing remains as the best option in this situation to decrease the duration.",
-    "img": "/58Picture.png"
+    "img": "/58Picture.png",
+    "height": "75%",
+    "width": "75%"
   },
   {
     "Question": "You have just been hired as the project manager in a large company and given the approved project charter. You know that your company always undertakes very challenging projects and your project is not an exception. What should be your first course of action?",
@@ -846,7 +853,10 @@ export const data = [
     "D": "This does not have any effect on the critical path, so reject the proposal",
     "Correct": "D",
     "Explanation": "According to the list of activities, activity H has float and is not critical. Therefore, changing its sequence to perform it sooner will not change the project finish date. The best way is to complete the critical activities earlier.",
-    "img": "/94Picture.png"
+    "img": "/94Picture.png",
+    "height": "40%",
+    "width": "40%"
+
   },
   {
     "Question": "You are managing an IT project for an external client. The project is ahead of schedule and your next activities are testing and hand over. Which one of the followings will you be more concerned about in this situation?",

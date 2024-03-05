@@ -1,0 +1,12 @@
+test img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+html {
+    background-color: #B3D2DC;
+    margin-left: .1%;
+    margin-right: .1%;
+
+}
