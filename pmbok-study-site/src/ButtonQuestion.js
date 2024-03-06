@@ -45,156 +45,75 @@ export default function ErrorRadios(props) {
       setHelperText('Incorrect');
       setError(true);
     }
-    if (props.currentQuestion === data.length - 1) {
-      setEnd(true)
-    }
-  };
-
-  const handleCheckClick = () => {
-    setDisplayText(props.question.Explanation);
-    setButtonState(true)
-    if (answer.toString() === props.question.Correct.toString()) {
-      setHelperText('Correct');
-      setError(false);
-      setScore(score + 1);
-    } else {
-      setHelperText('Incorrect');
-      setError(true);
+    if (props.question.Checkbox === true) {
+      if (answer.toString() === props.question.Correct.toString()) {
+        setHelperText('Correct');
+        setError(false);
+        setScore(score + 1);
+      } else {
+        setHelperText('Incorrect');
+        setError(true);
+      }
     }
     if (props.currentQuestion === data.length - 1) {
       setEnd(true)
     }
   };
 
-  if (props.question.Checkbox === true) {
-    return (
-      <form>
-        <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="question">{props.question.Question}</FormLabel>
-          <img src={props.question.img} height={props.question.height} width={props.question.width} />
-          <h2>{score}/{data.length}</h2>
-          <FormGroup
-            aria-labelledby="question"
-            name="quiz"
-            value={answer}
-            onChange={handleChange}
-          >
 
-            <FormControlLabel disabled={buttonState} control={<Checkbox value="0" />} label={props.question.A} />
-            <FormControlLabel disabled={buttonState} control={<Checkbox value="1" />} label={props.question.B} />
-            <FormControlLabel disabled={buttonState} control={<Checkbox value="2" />} label={props.question.C} />
-            <FormControlLabel disabled={buttonState} control={<Checkbox value="3" />} label={props.question.D} />
-          </FormGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-          <Button sx={{ mt: 1, mr: 1 }} onClick={handleCheckClick} disabled={buttonState} type="submit" variant="outlined">
-            Check Answer
-          </Button>
-        </FormControl>
-        <br />
-        <div>
-          {displayText}
-        </div>
-        <br />
-        <Button onClick={() => {
-          if (props.currentQuestion === 0) {
-            props.setCurrentQuestion(data.length - 1)
-          } else {
-            props.setCurrentQuestion(props.currentQuestion - 1);
-          }
-          setButtonState(false)
-          setDisplayText('');
-          setAnswer([0, 0, 0, 0])
-          setHelperText(' ');
-          setError(false);
-          setValue('')
-        }} variant="outlined">Prev Question (Dev Tool)</Button>
-
-        <Button onClick={() => {
-          if (props.currentQuestion === data.length - 1) {
-          }
-          else {
-            props.setCurrentQuestion(props.currentQuestion + 1);
-            setButtonState(false)
-            setDisplayText('');
-            setAnswer([0, 0, 0, 0])
-            setHelperText(' ');
-            setError(false);
-            setValue('')
-          }
-        }} variant="outlined">Next Question</Button>
-
-        <EndScreen
-          on={end}
-          score={score}
-          total={data.length}
+  return (
+    <form>
+      <FormControl sx={{ m: 3 }} error={error} variant="standard">
+        <FormLabel id="question">{props.question.Question}</FormLabel>
+        <img src={props.question.img} height={props.question.height} width={props.question.width} />
+        <h2>{score}/{data.length}</h2>
+        <QuestionLabels
+          question={props.question}
+          buttonState={buttonState}
+          value={value}
+          handleChange={handleChange}
+          answer={answer}
         />
-      </form>
-    );
-  } else {
-    return (
-      <form>
-        <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="question">{props.question.Question}</FormLabel>
-          <img src={props.question.img} height={props.question.height} width={props.question.width} />
-          <h2>{score}/{data.length}</h2>
-          <RadioGroup
-            aria-labelledby="question"
-            name="quiz"
-            value={value}
-            onChange={handleChange}
-          >
-            <FormControlLabel value="A" disabled={buttonState} control={<Radio />} label={props.question.A} />
-            <FormControlLabel value="B" disabled={buttonState} control={<Radio />} label={props.question.B} />
-            <FormControlLabel value="C" disabled={buttonState} control={<Radio />} label={props.question.C} />
-            <FormControlLabel value="D" disabled={buttonState} control={<Radio />} label={props.question.D} />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-          <Button sx={{ mt: 1, mr: 1 }} onClick={handleClick} disabled={buttonState} type="submit" variant="outlined">
-            Check Answer
-          </Button>
-        </FormControl>
-        <div>
-          {displayText}
-        </div>
-        <br />
-        <Button onClick={() => {
-          if (props.currentQuestion === 0) {
-            props.setCurrentQuestion(data.length - 1)
-          } else {
-            props.setCurrentQuestion(props.currentQuestion - 1);
-          }
-          setButtonState(false)
-          setDisplayText('');
-          setValue('')
-          setHelperText(' ');
-          setError(false);
-          setAnswer([0, 0, 0, 0])
-        }} variant="outlined">Prev Question (Dev Tool)</Button>
+        <FormHelperText>{helperText}</FormHelperText>
+        <CheckAnswerButton
+          handleClick={handleClick}
+          buttonState={buttonState} />
+      </FormControl>
+      <br />
+      <div>
+        {displayText}
+      </div>
+      <br />
+      <PreviousQuestionButton
+        currentQuestion={props.currentQuestion}
+        setCurrentQuestion={props.setCurrentQuestion}
+        setButtonState={setButtonState}
+        setDisplayText={setDisplayText}
+        setValue={setValue}
+        setHelperText={setHelperText}
+        setError={setError}
+        setAnswer={setAnswer}
+      />
 
-        <Button onClick={() => {
-          if (props.currentQuestion === data.length - 1) {
-          }
-          else {
-            props.setCurrentQuestion(props.currentQuestion + 1);
-            setButtonState(false)
-            setDisplayText('');
-            setValue('')
-            setHelperText(' ');
-            setError(false);
-            setAnswer([0, 0, 0, 0])
-          }
+      <NextQuestionButton
+        currentQuestion={props.currentQuestion}
+        setCurrentQuestion={props.setCurrentQuestion}
+        setButtonState={setButtonState}
+        setDisplayText={setDisplayText}
+        setValue={setValue}
+        setHelperText={setHelperText}
+        setError={setError}
+        setAnswer={setAnswer}
+        end = {end}
+      />
 
-        }} variant="outlined">Next Question</Button>
-
-        <EndScreen
-          on={end}
-          score={score}
-          total={data.length}
-        />
-      </form>
-
-    );
-  }
+      <EndScreen
+        on={end}
+        score={score}
+        total={data.length}
+      />
+    </form>
+  );
 }
 
 function EndScreen(props) {
@@ -209,6 +128,86 @@ function EndScreen(props) {
   } else {
     return (
       <></>
+    );
+  }
+}
+
+function CheckAnswerButton(props) {
+  return (
+    <Button sx={{ mt: 1, mr: 1 }} onClick={props.handleClick} disabled={props.buttonState} type="submit" variant="outlined"> Check Answer </Button>
+  );
+
+}
+
+function NextQuestionButton(props) {
+  return (
+    <Button onClick={() => {
+      if (props.currentQuestion === data.length - 1) {
+      }
+      else {
+        props.setCurrentQuestion(props.currentQuestion + 1);
+        props.setButtonState(false)
+        props.setDisplayText('');
+        props.setValue('')
+        props.setHelperText(' ');
+        props.setError(false);
+        props.setAnswer([0, 0, 0, 0])
+      }
+    
+    }} disabled = {props.end} variant="outlined">Next Question</Button>
+  );
+}
+
+function PreviousQuestionButton(props) {
+  return (
+    <Button onClick={() => {
+      if (props.currentQuestion === 0) {
+        props.setCurrentQuestion(data.length - 1)
+      } else {
+        props.setCurrentQuestion(props.currentQuestion - 1);
+      }
+      props.setButtonState(false)
+      props.setDisplayText('');
+      props.setValue('')
+      props.setHelperText(' ');
+      props.setError(false);
+      props.setAnswer([0, 0, 0, 0])
+    }} variant="outlined">Prev Question (Dev Tool)</Button>
+  );
+}
+
+function QuestionLabels(props) {
+  if (props.question.Checkbox === true) {
+    return (
+      <>
+        <FormGroup
+          aria-labelledby="question"
+          name="quiz"
+          value={props.answer}
+          onChange={props.handleChange}
+        >
+          <FormControlLabel disabled={props.buttonState} control={<Checkbox value="0" />} label={props.question.A} />
+          <FormControlLabel disabled={props.buttonState} control={<Checkbox value="1" />} label={props.question.B} />
+          <FormControlLabel disabled={props.buttonState} control={<Checkbox value="2" />} label={props.question.C} />
+          <FormControlLabel disabled={props.buttonState} control={<Checkbox value="3" />} label={props.question.D} />
+        </FormGroup>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <RadioGroup
+          aria-labelledby="question"
+          name="quiz"
+          value={props.value}
+          onChange={props.handleChange}
+        >
+          <FormControlLabel value="A" disabled={props.buttonState} control={<Radio />} label={props.question.A} />
+          <FormControlLabel value="B" disabled={props.buttonState} control={<Radio />} label={props.question.B} />
+          <FormControlLabel value="C" disabled={props.buttonState} control={<Radio />} label={props.question.C} />
+          <FormControlLabel value="D" disabled={props.buttonState} control={<Radio />} label={props.question.D} />
+        </RadioGroup>
+      </>
     );
   }
 }

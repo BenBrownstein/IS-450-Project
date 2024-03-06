@@ -9,7 +9,7 @@ import ErrorRadios from './ButtonQuestion.js';
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [testData, setTestData] = useState([])
-  // fetch('http://3.93.67.170:5000/data')
+  // fetch('http://54.196.56.64:5000/data')
   // .then(response => response.json())
   // .then(data =>  setTestData(data))
   return (
@@ -18,7 +18,7 @@ function App() {
       {
         return(
           <>
-          <h1>{x.data}</h1>
+          <h1>{x.text}</h1>
           </>
         );
 
