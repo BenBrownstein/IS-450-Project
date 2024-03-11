@@ -21,6 +21,7 @@ Sample questions are  stored in a CSV file in the repo as well as Google Sheets 
 
 Pictures needed for questions are stored in the public folder of React project
 
+Comments are added to some commits to have a better description of what occured
 
 Final Planning
 Scope: Add CSS, Add space for Ads, Clean up code
