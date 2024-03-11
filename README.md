@@ -24,10 +24,15 @@ Pictures needed for questions are stored in the public folder of React project
 Comments are added to some commits to have a better description of what occured
 
 Final Planning
+
 Scope: Add CSS, Add space for Ads, Clean up code
+
 Schedule: 
 Done Monday Pomodoro: Add space for Ads (Top Banner)
+
 Tuesday Pomodoro: Add CSS (Background Color, Font, Stlying)
+
 Wednesday Pomodoro: Add CSS, Clean up code (Finish up CSS if any is needed if not Clean up Code)
+
 Thursday Pomodoro: Clean up code (Try to minimzie duplication in code, make a seperate function for check answer, next question, and previous question but it is not called in the function, combine handleRadioChange and handleCheckChange)
 
